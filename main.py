@@ -7,7 +7,7 @@ sys.setrecursionlimit(10000)
 
 @MemoizedFunction
 def strat(d, m):
-    z = 1.25 - 1 * (d)
+    z = 1.25 + (1 if d < 0 else 0)
     if z < 0.25:
         z = 0.25
     p = z/90.
@@ -72,8 +72,8 @@ def E(
         )
 
 def main():
-    print E(0, 0,
-        1,
-        3., 1., 0.)
+    print(E(0, 0,
+        .5,
+        2., 1., 0.))
 
 main()
